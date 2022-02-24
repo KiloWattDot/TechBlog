@@ -1,0 +1,121 @@
+
+
+body {
+  background: 
+    url('AdobeStock_441618890.jpeg')
+    top center / 5000px 4000px
+    fixed
+    no-repeat;
+    
+
+}
+
+
+header {
+    padding: 40px;
+    text-align: center;
+    background: var(--primary);
+    color: wheat;
+    background-color: tomato;
+    font-size: larger;
+  }
+
+  nav {
+    display: flex;
+    color: wheat;
+    background-color: tomato;
+    font-size: 35px;
+    position: relative;
+  }
+  
+  nav a {
+    color: var(--light);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    position: flex;
+  
+  }
+  
+  nav a:hover {
+    color: tomato;
+    background-color: wheat;
+  }
+
+  .btnStyle {
+    color: wheat;
+    background-color: tomato;
+    border: none;
+    padding: 0;
+    font-weight: 900;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 100%;
+    transition: color 0.1s;
+    margin-right: 16px;
+  }
+
+
+  .dashboard {
+    position: relative;
+    
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+  }
+
+  .blogPost {
+    position: absolute;
+    margin: 0 auto;
+    background-color: rgba(64, 224, 208, 0.664);
+    box-sizing: border-box;
+    border: 5px rgb(255, 99, 71) solid;
+    border-radius: 9px;
+    margin-top: 50px;
+    color: rgb(230, 142, 0);
+   
+  }
+
+.postHeader {
+  /* background-color:rgba(255, 99, 71, 0.63); */
+  margin-top: -1%;
+  padding: 0 20px;
+}
+
+.blogPost-title {
+  font-weight: bold;
+}
+
+.blogPost-description {
+  font-style: italic; 
+  padding: 0 20px;
+  font-size: 25px;
+  /* background-color: rgba(64, 224, 208, 0.308); */
+}
+
+.commentPost {
+  position: absolute;
+  box-sizing: border-box;
+  background-color: rgba(245, 222, 179, 0.691);
+  border: 4px turquoise solid;
+  border-top:  50px turquoise solid;
+  border-radius: 9px;
+  margin: 20px;
+  margin-top: 450px;
+  padding: 20px;
+}
+
+.commentDescription {
+  font: italic;
+  color: tomato;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
+
+
+
+  

@@ -6,7 +6,7 @@ class User extends Model {
     checkPassword(loginPw) {
       return bcrypt.compareSync(loginPw, this.password);
     }
-  }
+}
 
 User.init(
     {
@@ -48,11 +48,12 @@ User.init(
           },
       },
       sequelize,
+      timestamps: false,
       freezeTableName: true,
       underscored: true,
       modelName: 'user',
     }
-  );
+);
   
   module.exports = User;
   

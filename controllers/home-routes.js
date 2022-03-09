@@ -42,7 +42,7 @@ router.get('/', async (res, req) => {
 })
 
 
-router.get('register', async (req, res) => {
+router.get('/register', async (req, res) => {
     try {
         res.render('register', {
             loggedIn: req.session.loggedIn

@@ -11,11 +11,11 @@ Posts.init(
 			primaryKey: true,
 			autoIncrement: true,
 		},
-		user_id: {
+		username: {
 			type: DataTypes.INTEGER,
 			references: {
 			  model: 'user',
-			  key: 'id',
+			  key: 'username',
 			},
 		},
 		title: {

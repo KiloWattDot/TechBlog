@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth')
 const bcrypt = require('bcrypt');
 
 //CREATE NEW USER
-router.post('/register', async (res, req) => {
+router.post('/register', async (req, res) => {
 
     try {
         // User is giving information to create account. 

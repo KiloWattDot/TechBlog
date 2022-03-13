@@ -6,10 +6,12 @@ const { post } = require('./api/user-routes');
 const res = require('express/lib/response');
 
 // Render Homepage, countvisit within session,
-router.get('/', async (res, req) => {
-    req.session.save(() => {
-        req.session.countVisit ? req.session.countVisit++ : req.session.countVisit = 1
-    })
+router.get('/', async (req, res) => {
+    // req.session.save(() => {
+    //     if (req.session.countVisit) { 
+    //         req.session.countVisit++ 
+    //     }  req.session.countVisit = 1 
+    // })
 
     try {
         const dbPostData = await Posts.findAll({
@@ -31,8 +33,8 @@ router.get('/', async (res, req) => {
         );
         res.render('homepage', {
             allPost,
-            loggedIn: req.session.loggedIn,
-            countVisit: req.session.countVisit,
+            // loggedIn: req.session.loggedIn,
+            // countVisit: req.session.countVisit,
         
         })
     } catch (err) { 

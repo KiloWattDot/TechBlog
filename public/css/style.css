@@ -3,7 +3,7 @@
 body {
   background: 
     url('AdobeStock_441618890.jpeg')
-    top center / 5000px 4000px
+    top center / 6000px 5000px
     fixed
     no-repeat;
     
@@ -57,24 +57,26 @@ header {
 
 
   .dashboard {
-    position: relative;
-    
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0;
     
   }
 
   .blogPost {
-    position: absolute;
+    position: relative;
     margin: 0 auto;
+    max-width: 1600px;
+    /* margin-left: 9rem; */
+    flex-direction: column;
     background-color: rgba(64, 224, 208, 0.664);
     box-sizing: border-box;
     border: 5px rgb(255, 99, 71) solid;
     border-radius: 9px;
     margin-top: 50px;
     color: rgb(230, 142, 0);
-   
+    overflow-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 .postHeader {
@@ -113,13 +115,261 @@ header {
   font-size: 20px;
 }
 
-.login-box {
-  
+
+/* LOGIN STYLE */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@100;200;300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+
+/* .login-background { 
+width: (100% - 300px);
+margin-top: 60px;
+padding: 75px;
+background: #e0f2fa;
+background-position: center;
+background-size: cover;
+height: 150vh;
+transition: 0.5s;
+position: relative;
+} */
+
+.login-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    align-items: center;
+    top: 30%;
+    left:50%;
+    position: absolute;
+    color: rgb(255, 174, 0);
+    font-size: 4em;
+    transform: translate(-50%, 0);
+}
+
+.login {
+    height: 666px;
+    width: 777px;
+    padding: 11px;
+    text-align: center;
+    align-items: center;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -30%);
+    justify-content: center;
+    background-color: tomato;
+    border: 2.5px solid #fffdf6bd;
+    box-shadow: 4px 4px 5px 4px rgba(0, 183, 255, 0.568);
+
+}
+
+input[type="email"] {
+  width: 60%;
+
+  font-size: 40px;
+}
+input[type="password"] {
+    width: 60%;
+    font-size: 40px;
+  }
+
+
+
+.emailText {
+font-family: 'Oswald', sans-serif;
+color: rgb(0, 174, 255);
+font-size: 40px;
+
+
+}
+
+.passwordText {
+    font-family: 'Oswald', sans-serif;
+    color: rgb(0, 174, 255);
+    font-size: 40px;
+}   
+
+button {
+    margin: 18px;
+    padding: 5px;
+    color: rgb(255, 196, 0);
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
 }
 
 
+::placeholder {
+    color: rgba(255, 153, 0, 0.623);
+}
+
+.btn {
+    color: rgba(255, 166, 0, 0.664);
+    border: none;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    font-size: 40px;
+    padding: 10px;
+
+}
+
+.btn:hover {
+    color: rgba(0, 204, 255, 0.698);
+}
 
 
+.username,
+.email,
+.password,
+.email-login,
+.password-login {
+    padding: 5px;
+    border: none;
+    margin: 16px;
+    border-radius: 8px;
+    font-size: .7em;
+}
+
+.hidden {
+    display: none
+}
 
 
-  
+/* Sign Up - Register */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@100;200;300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+
+/* .signUp-background { 
+    width: (100% - 300px);
+    margin-top: 60px;
+    padding: 75px;
+    background: #e0f2fa;
+    background-position: center;
+    background-size: cover;
+    height: 150vh;
+    transition: 0.5s;
+    position: relative;
+    }
+     */
+    .signUp-title {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 900;
+        text-align: center;
+        align-items: center;
+        top: 30%;
+        left:50%;
+        position: absolute;
+        color: rgb(255, 174, 0);
+        font-size: 4em;
+        transform: translate(-50%, 0);
+    }
+    
+    .signUp {
+    
+        height: 730px;
+        width: 666px;
+        padding: 11px;
+        text-align: center;
+        align-items: center;
+        border-radius: 8px;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%, -20%);
+        justify-content: center;
+        background-color: tomato;
+        border: 2.5px solid #ffffffbd;
+        box-shadow: 4px 4px 5px 4px rgba(0, 183, 255, 0.568);
+    
+    }
+    
+    input[type="email"] {
+      width: 60%;
+      font-size: 40px;
+      border-radius: 8px;
+      margin-bottom: 50px;
+    }
+    
+    input[type="username"] {
+        width: 60%;
+        font-size: 40px;
+        border-radius: 8px;
+        margin-bottom: 50px;
+      }
+    
+    input[type="password"] {
+      width: 60%;
+      font-size: 40px;
+      border-radius: 8px;
+      margin-bottom: 50px;
+    }
+
+
+    .emailText {
+    font-family: 'Oswald', sans-serif;
+    color: rgb(0, 174, 255);
+    font-size: 30px;
+
+    }
+
+    .passwordText {
+        font-family: 'Oswald', sans-serif;
+        color: rgb(0, 174, 255);
+        font-size: 30px;
+    }   
+    
+    .usernameText {
+        font-family: 'Oswald', sans-serif;
+        color: rgb(0, 174, 255);
+        font-size: 30px;
+    }   
+
+    ::placeholder {
+        color: rgba(255, 153, 0, 0.623);
+    }
+    
+    
+    
+    button {
+        margin: 18px;
+        padding: 5px;
+        color: rgb(255, 196, 0);
+        border-radius: 8px;
+        background-color: rgb(255, 255, 255);
+    }
+    
+    .btn {
+        color: rgba(255, 166, 0, 0.664);
+        border: none;
+        background-color: rgb(255, 255, 255);
+        border-radius: 8px;
+    }
+    
+    .btn:hover {
+        color: rgba(0, 204, 255, 0.698);
+        background-color: rgb(255, 149, 11);
+    }
+    
+    
+    /* .username-signup,
+    .email,
+    .password,
+    .email-signup,
+    .password-signup {
+        padding: 5px;
+        border: none;
+        margin: 16px;
+        border-radius: 8px;
+        font-size: .7em;
+        
+    } */
+    
+    .hidden {
+        display: none
+    }
+    

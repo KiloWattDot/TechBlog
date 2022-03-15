@@ -261,12 +261,12 @@ button {
         font-weight: 900;
         text-align: center;
         align-items: center;
-        top: 30%;
         left:50%;
-        position: absolute;
+        position: relative;
         color: rgb(255, 174, 0);
         font-size: 4em;
         transform: translate(-50%, 0);
+      
     }
     
     .signUp {
@@ -277,10 +277,9 @@ button {
         text-align: center;
         align-items: center;
         border-radius: 8px;
-        position: absolute;
-        top: 50%;
+        position: relative;
         left:50%;
-        transform: translate(-50%, -20%);
+        transform: translate(-50%, -40%);
         justify-content: center;
         background-color: tomato;
         border: 2.5px solid #ffffffbd;

@@ -31,6 +31,7 @@ router.get('/', async (req, res) => {
         const allPost = dbPostData.map((post) =>
             post.get({plain: true})    
         );
+        console.log(allPost)
         res.render('homepage', {
             allPost,
             // loggedIn: req.session.loggedIn,

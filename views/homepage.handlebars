@@ -13,19 +13,40 @@
 
 <div class="newPost">
   <div class="newpostHeader">
-    <input class="newTitle" maxlength="30" type="text" placeholder="Title">
-    <input class="newPost" maxlength="130" type="text" placeholder="What's up...">
+    <form class="titleForm"> 
+      <input class="newTitle" maxlength="30" type="text" placeholder="Title">
+    </form>
+
+
+    <form class="form-group">
+      <input class="newPostDesc" maxlength="130" type="text" placeholder="What's up...">
+      <input type="submit" onclick="submitPost()" >
+    </form>
   </div>
+
 </div>
 
 
-{{#each allPost as |post|}}
+{{#each (reverse allPost) as |post|}}
   <div class="blogPost">
       <div class="postHeader"> 
         <h1 class="blogPost-title"> {{post.title}}</h1>
-        <h3 class="blogPost-timestamp">Posted By {{post.user.username}} on 02/25/2022</h3>
+        <h3 class="blogPost-timestamp">Posted By {{post.user.username}} on {{format_time post.createdAt}}</h3>
       </div>
       <p class="blogPost-description">{{post.description}}</p>
+      
+
+    <div class="commentBox">
+
+        <input class="postId commentPostID" value=" {{post.id}}">
+
+      <form>
+        
+        <input class="commentPost" type="text" placeholder="type comment..">
+        <input type="submit" onclick="makeComment()">
+        {{post.comments}}
+      </form>
+    </div>
   </div>
 
   {{/each}}
@@ -33,3 +54,5 @@
 
     
 </main>
+
+<script src="/js/newPost.js"></script>

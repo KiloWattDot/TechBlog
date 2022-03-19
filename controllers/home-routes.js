@@ -31,10 +31,10 @@ router.get('/', async (req, res) => {
         const allPost = dbPostData.map((post) =>
             post.get({plain: true})    
         );
-        console.log(allPost)
+        console.log('Post:', allPost)
         res.render('homepage', {
             allPost,
-            // loggedIn: req.session.loggedIn,
+            loggedIn: req.session.loggedIn,
             // countVisit: req.session.countVisit,
         
         })

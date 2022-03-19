@@ -11,44 +11,53 @@
 
 <main class="dashboard">
 
-<div class="newPost">
-  <div class="newpostHeader">
-    <form class="titleForm"> 
-      <input class="newTitle" maxlength="30" type="text" placeholder="Title">
-    </form>
+  <div class="newPost">
+        <div class="newpostHeader">
+          <form class="postForm"> 
+            <div class="flexInput">
+           
+                <input class="newTitle" maxlength="30" type="title" placeholder="Title Topic...">
+            </div>   
 
+            <div class="flexInput"> 
+             
+                <input class="newPostDesc" maxlength="130" type="description" placeholder="What's on your mind...">
+            </div>
 
-    <form class="form-group">
-      <input class="newPostDesc" maxlength="130" type="text" placeholder="What's up...">
-      <input type="submit" onclick="submitPost()" >
-    </form>
-  </div>
+            <div class="flexInput"> 
+             <input type="submit" onclick="submitPost()" >
+            </div>
+        </form>
 
-</div>
+        </div>
+      
+    </div>
 
 
 {{#each (reverse allPost) as |post|}}
   <div class="blogPost">
       <div class="postHeader"> 
-        <h1 class="blogPost-title"> {{post.title}}</h1>
-        <h3 class="blogPost-timestamp">Posted By {{post.user.username}} on {{format_time post.createdAt}}</h3>
+        <h1 class="blogPost-title">Title: About the post<button onclick="delPost()"><img class="trashPost" src="css/trash-bin.png"></button></h1>
+        <h3 class="blogPost-timestamp">Posted By Username on 02/25/2022</h3>
       </div>
-      <p class="blogPost-description">{{post.description}}</p>
-      
+     <p class="blogPost-description"> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis magnam mollitiipsum dolor sit, amet consectetur adipisicing elit. Magni, corrupti assumenda. Quisquam pariatur earum aliquam eum harum temporibus obcaecati, perspiciatis doloremque, incidunt, quis nobis sit voluptates. Qui maxime nisi ea!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea mollitia delectus reiciendis ratione fugit placeat aut dicta incidunt, maiores, harum enim nostrum soluta totam laborum, debitis deserunt veritatis omnis. Beatae.
+      </p>
 
-    <div class="commentBox">
 
-        <input class="postId commentPostID" value=" {{post.id}}">
+      <div class="commentBox">
 
-      <form>
-        
-        <input class="commentPost" type="text" placeholder="type comment..">
-        <input type="submit" onclick="submitComment()">
-        {{post.comments}}
-      </form>
+        <label class="postId commentPostID" value=" 1">1</labe> 
+
+        <form>
+            <label class="userName">KiloWattDot</label>
+            <input class="commentPost" type="text" placeholder="type comment..">
+            <input type="submit" id="commentSubmit" onclick="submitComment()">
+            
+        </form>
     </div>
   </div>
-
   {{/each}}
 
 

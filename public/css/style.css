@@ -497,53 +497,53 @@ button {
 
 
 
-    @media all and (max-width: 480px) {
+@media all and (max-width: 480px) {
   
-      .logo-parent {
-        width: 100%;
-      }
-    
-      .logo-icon {
-        margin-left: 5px;
-        margin-top: 2px;
-        align-items: center;
-        height: 30px;
-      }
-    
-      .title {
-        display: block;
-        flex-direction: column;
-        font-size: 30px;
-      }
-      .navbar {
-        flex-direction: column;
-       
-      }
-      .nav-list {
-        width: 100%;
-        text-align: center;
-        display: none;
-      }
-      .nav-list .list-items {
-        border-top: 2px solid wheat;
-        display: block;
-        padding: 10px;
-        font-size: 20px;
-      }
-      .menu {
-        display:block;
-        position: absolute;
-        right: 40px;
-        top: 82px;
-        align-items: center;
-      }
-    
-      .active {
-        display: block;
-      }
-      .postForm {
-        width: 300px;
-      }
+    .logo-parent {
+      width: 100%;
+    }
+  
+    .logo-icon {
+      margin-left: 5px;
+      margin-top: 2px;
+      align-items: center;
+      height: 30px;
+    }
+  
+    .title {
+      display: block;
+      flex-direction: column;
+      font-size: 30px;
+    }
+    .navbar {
+      flex-direction: column;
+      
+    }
+    .nav-list {
+      width: 100%;
+      text-align: center;
+      display: none;
+    }
+    .nav-list .list-items {
+      border-top: 2px solid wheat;
+      display: block;
+      padding: 10px;
+      font-size: 20px;
+    }
+    .menu {
+      display:block;
+      position: absolute;
+      right: 40px;
+      top: 82px;
+      align-items: center;
+    }
+  
+    .active {
+      display: block;
+    }
+    .postForm {
+      width: 300px;
+    }
 
     }
     

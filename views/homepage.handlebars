@@ -43,7 +43,7 @@
       <form>
         
         <input class="commentPost" type="text" placeholder="type comment..">
-        <input type="submit" onclick="makeComment()">
+        <input type="submit" onclick="submitComment()">
         {{post.comments}}
       </form>
     </div>
@@ -56,3 +56,12 @@
 </main>
 
 <script src="/js/newPost.js"></script>
+<script>
+   const toggleMenu = document.querySelector('#btn-toggle')
+    const naviList = document.querySelector('#naviList')
+
+
+    toggleMenu.addEventListener('click', () => {
+        naviList.classList.toggle('active')
+    })
+</script>

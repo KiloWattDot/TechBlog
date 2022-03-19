@@ -69,7 +69,7 @@ router.post("/login", async (req, res) => {
 });
 
 // User creates a new Post
-router.post("/post", async (req, res) => {
+router.post("/post", withAuth, async (req, res) => {
   const newPost = await Posts.create({
     title: req.body.title,
     description: req.body.description,
@@ -79,7 +79,7 @@ router.post("/post", async (req, res) => {
 });
 
 
-router.delete("/post/:id", async (req, res) => {
+router.delete("/post/:id", withAuth, async (req, res) => {
     const newPost = await Takes.destroy({ 
         where: { id: req.params.id } });
     res.status(200).json(newPost);
@@ -87,7 +87,7 @@ router.delete("/post/:id", async (req, res) => {
   
 
 // User comment post
-router.post("/comment", async (req, res) => {
+router.post("/comment/", withAuth, async (req, res) => {
   try {
     const newComment = await Comments.create({
       description: req.body.description,
@@ -102,6 +102,21 @@ router.post("/comment", async (req, res) => {
   }
 });
 
+// User comment delete
+router.delete("/comment/:id", withAuth, async (req, res) => {
+  try {
+    const newComment = await Comments.destroy({
+      description: req.body.description,
+      username: "kilowattdot",
+      post_id: req.body.post_id,
+      // user_id: req.session.id
+    });
+
+    res.status(200).json(newComment);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 // User logout and session destroyed
 router.post("/logout", (req, res) => {

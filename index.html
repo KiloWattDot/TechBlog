@@ -8,31 +8,79 @@
     <title>The Tech Blog</title>
 </head>
 <body>
-    
-<header>
-<h1 class="title">The Tech Blog</h1>
-</header>
 
 
-<nav class="tabs">
+<nav class="navbar">
+    <div class="logo-parent"> 
+    <h1 class="title"><span><img class="logo-icon" src="./public/css/light-bulb.png"></span>The Tech Blog  </h1>
+    </div>
 
-    <a href="/">Home</a>
-    <a href="/">Dashboard</a>
-    <a href="/login" >Login</a>
-    <a href="/logout" class="logout" >Logout</a>
+    <ul class="nav-list" id="naviList">
+        <li class="list-items"><a href="/">Home</a></li>
+        <li class="list-items"><a href="/">Dashboard</a></li>
+        <li class="list-items"><a href="/login" >Login</a></li>
+        <li class="list-items"><a href="/logout" class="logout" >Logout</a></li>
+    </ul>
+
+    <div class="menu" id="btn-toggle">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+    </div>
 
 </nav>
 
+
+
 <main class="dashboard">
+
+    <div class="newPost">
+        <div class="newpostHeader">
+          <form class="postForm"> 
+            <div class="flexInput">
+           
+                <input class="newTitle" maxlength="30" type="title" placeholder="Title Topic...">
+            </div>   
+
+            <div class="flexInput"> 
+             
+                <input class="newPostDesc" maxlength="130" type="description" placeholder="What's on your mind...">
+            </div>
+
+            <div class="flexInput"> 
+             <input type="submit" onclick="submitPost()" >
+            </div>
+        </form>
+
+        </div>
+      
+    </div>
+      
+
+
+
   <div class="blogPost">
       <div class="postHeader"> 
-        <h1 class="blogPost-title">Title: About the post</h1>
+        <h1 class="blogPost-title">Title: About the post<button onclick="delPost()"><img class="trashPost" src="./public/css/trash-bin.png"></button></h1>
         <h3 class="blogPost-timestamp">Posted By Username on 02/25/2022</h3>
       </div>
-      <p class="blogPost-description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis magnam mollitia quos libero, aliquam modi saepe non eaque sequi ad soluta beatae pariatur vitae, autem aspernatur nostrum odit? Et, libero!
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni, corrupti assumenda. Quisquam pariatur earum aliquam eum harum temporibus obcaecati, perspiciatis doloremque, incidunt, quis nobis sit voluptates. Qui maxime nisi ea!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea mollitia delectus reiciendis ratione fugit placeat aut dicta incidunt, maiores, harum enim nostrum soluta totam laborum, debitis deserunt veritatis omnis. Beatae.
+     <p class="blogPost-description"> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis magnam mollitiipsum dolor sit, amet consectetur adipisicing elit. Magni, corrupti assumenda. Quisquam pariatur earum aliquam eum harum temporibus obcaecati, perspiciatis doloremque, incidunt, quis nobis sit voluptates. Qui maxime nisi ea!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea mollitia delectus reiciendis ratione fugit placeat aut dicta incidunt, maiores, harum enim nostrum soluta totam laborum, debitis deserunt veritatis omnis. Beatae.
       </p>
+
+
+      <div class="commentBox">
+
+        <label class="postId commentPostID" value=" 1">1</labe> 
+
+        <form>
+            <label class="userName">KiloWattDot</label>
+            <input class="commentPost" type="text" placeholder="type comment..">
+            <input type="submit" id="commentSubmit" onclick="submitComment()">
+            
+        </form>
+    </div>
   </div>
 
   <!-- <div class="commentPost">
@@ -44,6 +92,16 @@
     
 </main>
 
+<script src="./public/js/post-comment.js"></script>
+<script>
+    const toggleMenu = document.querySelector('#btn-toggle')
+    const naviList = document.querySelector('#naviList')
+
+
+    toggleMenu.addEventListener('click', () => {
+        naviList.classList.toggle('active')
+    })
+</script>
 
 
 </body>

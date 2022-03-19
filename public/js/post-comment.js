@@ -25,7 +25,7 @@ async function submitPost() {
 
 // Comment Function
 
-async function makeComment() {
+async function submitComment() {
   // e.preventDefault()
 
   const description = document.querySelector(".commentPost").value;
@@ -49,7 +49,7 @@ async function makeComment() {
 
 
 // Post Delete Function
-function theDelete(id) {
+function delPost(id) {
   const response = fetch(`/api/users/post/${id}`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
@@ -59,6 +59,17 @@ function theDelete(id) {
     }, 2000)
   );
 }
+
+
+// function toggleMenuBtn () {
+//   const toggleMenu = document.querySelector('#btn-toggle')
+//   const naviList = document.querySelector('#naviList')
+
+
+//   toggleMenu.addEventListener('click', () => {
+//       naviList.classList.toggle('active')
+//   })
+// }
 
 
 // Comment Delete Function

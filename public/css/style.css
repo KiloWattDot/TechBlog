@@ -9,69 +9,69 @@ body {
     
 
 }
+.title {
+  font-size: 50px;
+  color: wheat;
+  /* text-align: left; */
+}
 
-
-header {
-    padding: 40px;
+/* padding: 40px;
     text-align: center;
     background: var(--primary);
     color: wheat;
     background-color: tomato;
-    font-size: larger;
-  }
+    font-size: larger; */
 
-  nav {
-    display: flex;
-    color: wheat;
-    background-color: tomato;
-    font-size: 35px;
-    position: relative;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    /* background-color: #333; */
-  }
-  
-  nav a {
+.navbar {
+  background-color: tomato;
+  display: flex;
+  justify-content: space-around;
+  /* height: 50px; */
+  align-items: center;
+  padding: 30px;
 
-    display: inline-block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    color: var(--light);
-    padding: 14px 20px;
-    position: flex;
-  }
-  
-  nav a:hover {
-    color: tomato;
-    background-color: wheat;
-  }
+}
 
- .logout {
-   float: right;
-  }
+.logo-icon {
+  height: 40px;
+}
 
-  /* .btnStyle {
-    color: wheat;
-    background-color: tomato;
-    border: none;
-    padding: 0;
-    font-weight: 900;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 100%;
-    transition: color 0.1s;
-    margin-right: 16px;
-  }
- */
+.nav-list {
+  list-style: none;
+}
 
-  .dashboard {
-    box-sizing: border-box;
-    margin: 0;
-    
-  }
+.nav-list .list-items {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 30px;
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: wheat;
+}
+
+.navbar .list-items:hover {
+
+  background-color: rgb(255, 145, 0);
+
+}
+
+.menu {
+  display: none;
+}
+
+.menu-line {
+  width: 20px;
+  height: 3px;
+  background-color: wheat;
+  margin-bottom: 4px;
+}
+
+
+
+
 
   .blogPost {
     position: relative;
@@ -96,8 +96,15 @@ header {
   padding: 0 20px;
 }
 
+button {
+  float: right;
+  border: none;
+ 
+}
+
 .blogPost-title {
   font-weight: bold;
+  align-items: center;
 }
 
 .blogPost-description {
@@ -107,24 +114,113 @@ header {
   /* background-color: rgba(64, 224, 208, 0.308); */
 }
 
-.commentPost {
-  position: absolute;
+/* NEW POST STYLING-------------------------------------------------------------- */
+
+
+.newPost {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1600px;
+  height: 300px;
+  /* margin-left: 9rem; */
+  flex-direction: column;
+  background-color: rgba(255, 165, 124, 0.664);
   box-sizing: border-box;
-  background-color: rgba(245, 222, 179, 0.691);
-  border: 4px turquoise solid;
-  border-top:  50px turquoise solid;
+  border: 5px rgb(0, 234, 255) solid;
   border-radius: 9px;
-  margin: 20px;
-  margin-top: 450px;
-  padding: 20px;
+  margin-top: 50px;
+  color: rgb(230, 142, 0);
+  overflow-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ 
 }
 
-.commentDescription {
-  font: italic;
-  color: tomato;
-  font-weight: bold;
-  font-size: 20px;
-}
+.newpostHeader {
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  }
+  
+  .postForm {
+    padding: 10px;
+    width: 1000px;
+    display: block;
+    
+  }
+  
+  input[type="title"] {
+    padding: 10px;
+    width: 800px;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 7px;
+    background-color:rgba(255, 254, 253, .8)
+  }
+  input[type="description"] {
+    padding: 10px;
+    width: 800px;
+    height: 100px;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 7px;
+    background-color:rgba(255, 254, 253, .8)
+  }
+
+  .flexInput {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    justify-content: center;
+
+  }
+
+  input[type="submit"] {
+   width: 30%;
+   font-size: 20px;
+   padding: 10px;
+   background-color: tomato;
+   border: none;
+   border-radius: 7px;
+   color: wheat;
+   margin-bottom: 10px;
+   font-weight: bold;
+  }
+
+  input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: wheat;
+    color: tomato;
+  }
+
+
+
+
+  
+  /* Comment Box */
+  
+  .commentBox {
+    margin-top: 5%;
+    /* position: absolute; */
+  
+    z-index: 9;
+  }
+  
+  .commentPost {
+    margin-left: 15%;
+    margin-top: -5%;
+  }
+  
+  
+  .commentPostID {
+    margin-left: 25%;
+    margin-top: -9%;
+  }
+  
 
 
 /* LOGIN STYLE */
@@ -383,73 +479,72 @@ button {
         display: none
     }
     
-/* New Post */
 
-.newPost {
-  position: relative;
-  margin: 0 auto;
-  width: 1600px;
-  height: 300px;
-  /* margin-left: 9rem; */
-  flex-direction: column;
-  background-color: rgba(255, 165, 124, 0.664);
-  box-sizing: border-box;
-  border: 5px rgb(0, 234, 255) solid;
-  border-radius: 9px;
-  margin-top: 50px;
-  color: rgb(230, 142, 0);
-  overflow-wrap: break-word;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+@media all and (max-width: 900px) {
+  .postForm {
+    width: 600px;
+  }
 }
-
-.newpostHeader {
-/* background-color:rgba(255, 99, 71, 0.63); */
-margin-top: -1%;
-padding: 0 20px;
-}
-
-.form-group {
-  position: absolute;
-  width: 30px;
-  height: 50px;
-  margin-top: 10%;
-  display: block;
-}
-
-.titleForm {
-  position: absolute;
-  width: 30px;
-  height: 50px;
-  margin-top: 5%;
-  display: block;
-}
-
-.newPostDesc {
-font-style: italic; 
-padding: 0 20px;
-font-size: 25px;
-/* background-color: rgba(64, 224, 208, 0.308); */
+@media all and (max-width: 600px) {
+  .postForm {
+    width: 400px;
+  }
 }
 
 
 
-/* Comment Box */
-
-.commentBox {
-  margin-top: 5%;
-  /* position: absolute; */
-
-  z-index: 9;
-}
-
-.commentPost {
-  margin-left: 15%;
-  margin-top: -5%;
-}
 
 
-.commentPostID {
-  margin-left: 25%;
-  margin-top: -9%;
-}
+
+    @media all and (max-width: 480px) {
+  
+      .logo-parent {
+        width: 100%;
+      }
+    
+      .logo-icon {
+        margin-left: 5px;
+        margin-top: 2px;
+        align-items: center;
+        height: 30px;
+      }
+    
+      .title {
+        display: block;
+        flex-direction: column;
+        font-size: 30px;
+      }
+      .navbar {
+        flex-direction: column;
+       
+      }
+      .nav-list {
+        width: 100%;
+        text-align: center;
+        display: none;
+      }
+      .nav-list .list-items {
+        border-top: 2px solid wheat;
+        display: block;
+        padding: 10px;
+        font-size: 20px;
+      }
+      .menu {
+        display:block;
+        position: absolute;
+        right: 40px;
+        top: 82px;
+        align-items: center;
+      }
+    
+      .active {
+        display: block;
+      }
+      .postForm {
+        width: 300px;
+      }
+
+    }
+    
+    

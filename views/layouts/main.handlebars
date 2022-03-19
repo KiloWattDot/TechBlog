@@ -9,19 +9,26 @@
 </head>
 <body>
     
-<header>
-<h1 class="title">The Tech Blog</h1>
-</header>
 
-<nav class="tabs">
-    <a href="/">Home</a>
+<nav class="navbar">
+    <div class="logo-parent"> 
+    <h1 class="title"><span><img class="logo-icon" src="css/light-bulb.png"></span>The Tech Blog  </h1>
+    </div>
 
-    
-    <a href="/">Dashboard</a>
-    <button id="logout" class="btnStyle">Logout</button>
-    <a href="/login" >Login</a>
+    <ul class="nav-list" id="naviList">
+        <li class="list-items"><a href="/">Home</a></li>
+        <li class="list-items"><a href="/">Dashboard</a></li>
+        <li class="list-items"><a href="/login" >Login</a></li>
+        <li class="list-items"><a href="/logout" class="logout" >Logout</a></li>
+    </ul>
+
+    <div class="menu" id="btn-toggle">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+    </div>
+
 </nav>
-
 
 
 

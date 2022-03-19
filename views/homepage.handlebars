@@ -37,24 +37,23 @@
 {{#each (reverse allPost) as |post|}}
   <div class="blogPost">
       <div class="postHeader"> 
-        <h1 class="blogPost-title">Title: About the post<button onclick="delPost()"><img class="trashPost" src="css/trash-bin.png"></button></h1>
-        <h3 class="blogPost-timestamp">Posted By Username on 02/25/2022</h3>
+        <h1 class="blogPost-title">{{post.title}}<button onclick="delPost()"><img class="trashPost" src="css/trash-bin.png"></button></h1>
+        <h3 class="blogPost-timestamp">Posted By {{post.user.username}} on {{format_time post.createdAt}}</h3>
       </div>
      <p class="blogPost-description"> 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis magnam mollitiipsum dolor sit, amet consectetur adipisicing elit. Magni, corrupti assumenda. Quisquam pariatur earum aliquam eum harum temporibus obcaecati, perspiciatis doloremque, incidunt, quis nobis sit voluptates. Qui maxime nisi ea!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea mollitia delectus reiciendis ratione fugit placeat aut dicta incidunt, maiores, harum enim nostrum soluta totam laborum, debitis deserunt veritatis omnis. Beatae.
+       {{post.description}}
       </p>
 
 
       <div class="commentBox">
 
-        <label class="postId commentPostID" value=" 1">1</labe> 
+        <label class="postId commentPostID" value=" {{post.id}}"></labe> 
 
         <form>
             <label class="userName">KiloWattDot</label>
             <input class="commentPost" type="text" placeholder="type comment..">
             <input type="submit" id="commentSubmit" onclick="submitComment()">
-            
+             {{post.comments}}
         </form>
     </div>
   </div>
@@ -64,7 +63,7 @@
     
 </main>
 
-<script src="/js/newPost.js"></script>
+<script src="js/post-comment.js"></script>
 <script>
    const toggleMenu = document.querySelector('#btn-toggle')
     const naviList = document.querySelector('#naviList')
@@ -74,3 +73,26 @@
         naviList.classList.toggle('active')
     })
 </script>
+
+
+
+{{!-- <div class="blogPost">
+      <div class="postHeader"> 
+        <h1 class="blogPost-title"> {{post.title}}</h1>
+        <h3 class="blogPost-timestamp">Posted By {{post.user.username}} on {{format_time post.createdAt}}</h3>
+      </div>
+      <p class="blogPost-description">{{post.description}}</p>
+      
+
+    <div class="commentBox">
+
+        <input class="postId commentPostID" value=" {{post.id}}">
+
+      <form>
+        
+        <input class="commentPost" type="text" placeholder="type comment..">
+        <input type="submit" onclick="makeComment()">
+        {{post.comments}}
+      </form>
+    </div>
+  </div> --}}

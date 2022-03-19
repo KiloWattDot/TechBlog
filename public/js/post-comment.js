@@ -61,15 +61,15 @@ function delPost(id) {
 }
 
 
-// function toggleMenuBtn () {
-//   const toggleMenu = document.querySelector('#btn-toggle')
-//   const naviList = document.querySelector('#naviList')
+function toggleMenuBtn () {
+  const toggleMenu = document.querySelector('#btn-toggle')
+  const naviList = document.querySelector('#naviList')
 
 
-//   toggleMenu.addEventListener('click', () => {
-//       naviList.classList.toggle('active')
-//   })
-// }
+  toggleMenu.addEventListener('click', () => {
+      naviList.classList.toggle('active')
+  })
+}
 
 
 // Comment Delete Function

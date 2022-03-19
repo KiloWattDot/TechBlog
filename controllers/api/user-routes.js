@@ -69,7 +69,7 @@ router.post("/login", async (req, res) => {
 });
 
 // User creates a new Post
-router.post("/post", withAuth, async (req, res) => {
+router.post("/post", async (req, res) => {
   const newPost = await Posts.create({
     title: req.body.title,
     description: req.body.description,

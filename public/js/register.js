@@ -7,18 +7,24 @@ async function register() {
 	const email = document.querySelector('.email-signup').value.trim();
 	const password = document.querySelector('.password-signup').value.trim();
 
-
-    const response = await fetch('/api/users/register', {
-      method: 'POST',
-      body: JSON.stringify({  username, email, password}),
-      headers: { 'Content-Type': 'application/json' },
+    if(username && email && password ) { 
+        const response = await fetch('/api/users/register', {
+        method: 'POST',
+        body: JSON.stringify({  username, email, password}),
+        headers: { 'Content-Type': 'application/json' },
     });
   
     if (response.ok) {
       document.location.replace('/register');
+      alert('Sign in successful...');
     } else {
-      alert('Sign failed...');
+      alert('Sign in failed...');
     }
+      console.log(response);
   };
+}
+
   
-  
+  document
+  .querySelector('.signUp-form')
+  .addEventListener('submit', register);

@@ -20,7 +20,7 @@ async function submitPost() {
       document.querySelector(".newPostDesc").value = "";
     });
     console.log(response);
-  }
+  } 
 }
 
 // Comment Function
@@ -28,19 +28,20 @@ async function submitPost() {
 async function submitComment() {
   // e.preventDefault()
 
-  const description = document.querySelector(".commentPost").value;
-  const post_id = document.querySelector(".postId").value;
+  const description = document.querySelector(".commentDesc").value;
+  const which = document.querySelector(".postId").value;
 
-  if (description && post_id) {
+  if (description && which) {
     const response = await fetch("/api/users/comment", {
       method: "POST",
-      body: JSON.stringify({ description, post_id }),
+      body: JSON.stringify({ description, which, user_id }),
       headers: { "Content-Type": "application/json" },
     }).then(() => {
       setTimeout(() => {
         document.location.replace("/");
       }, 2000);
       document.querySelector(".commentPost").value = "";
+      document.querySelector(".postId").value ="";
     });
     console.log(response);
   }
@@ -61,13 +62,28 @@ function delPost(id) {
 }
 
 
-function toggleMenuBtn () {
+function toggleMenuBtn() {
   const toggleMenu = document.querySelector('#btn-toggle')
   const naviList = document.querySelector('#naviList')
 
 
   toggleMenu.addEventListener('click', () => {
       naviList.classList.toggle('active')
+  })
+}
+
+
+function toggleCommentBtn() {
+  const toggleComments = document.querySelector('.commentBtn')
+  const commentArea = document.querySelector('.commentForm')
+
+
+
+
+
+  toggleComments.addEventListener('click', () => {
+    commentArea.classList.toggle('display')
+    console.log('clicked toggle')
   })
 }
 

@@ -1,0 +1,54 @@
+  <div class="newPost">
+        <div class="newpostHeader">
+          <form class="postForm"> 
+            <div class="flexInput">
+           
+                <input class="newTitle" maxlength="30" type="title" placeholder="Title Topic...">
+            </div>   
+
+            <div class="flexInput"> 
+             
+                <input class="newPostDesc" maxlength="130" type="description" placeholder="What's on your mind...">
+            </div>
+
+            <div class="flexInput"> 
+             <input type="submit" onclick="submitPost()" >
+            </div>
+        </form>
+
+        </div>
+      
+    </div>
+
+
+    {{#each (reverse userPosts) as |post|}}
+  <div class="blogPost">
+      <div class="postHeader"> 
+        <h1 class="blogPost-title">{{post.title}}<button onclick="delPost()"><img class="trashPost" src="css/trash-bin.png"></button></h1>
+        <h3 class="blogPost-timestamp">Posted By {{post.user.username}} on {{format_time post.createdAt}}</h3>
+      </div>
+     <p class="blogPost-description"> 
+       {{post.description}}
+      </p>
+
+
+      {{!-- <div class="commentBox">
+
+        <label class="postId commentPostID" value=" {{post.id}}">1</label> 
+          <div class="flexInput-commnents">
+              <label class="userName">KiloWattDot</label>
+          </div>
+          
+        <form class="commentForm">
+          <span><img id="postComment" src="css/message.png"></span>
+          <div class="flexInput-commnents">
+            <input class="commentDesc" type="text" placeholder="type comment..">
+
+            <input type="submit" id="commentSubmit" onclick="submitComment()">
+          </div>
+          
+             {{post.comments}}
+        </form>
+    </div> --}}
+  </div>
+  {{/each}}

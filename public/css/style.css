@@ -201,26 +201,101 @@ button {
 
 
   
-  /* Comment Box */
+  /* Comment Box ---------------------------------------------------*/
   
   .commentBox {
-    margin-top: 5%;
-    /* position: absolute; */
+    position: relative;
+    margin: 0 auto;
+    /* margin-left: 9rem; */
+    flex-direction: column;
   
-    z-index: 9;
+  }
+
+  .commentBtn {
+    margin-left: 2%;
+    margin-bottom: 5px;
+  }
+
+  .displayComments {
+    margin-left: 40%;
+    margin-bottom: 5px;
+    float: none !important;
+    width: 15% !important;
+    font-size: 20px !important;
+    padding: 10px !important;
+    background-color: tomato !important;
+    color: wheat !important;
+
+  }
+
+
+  .postId {
+      display: none;
   }
   
-  .commentPost {
-    margin-left: 15%;
-    margin-top: -5%;
+  .commentForm {
+    top: 20px;
+    display: flex;
+    width: 100%;
+    background-color: rgba(255, 165, 124, 0.664);
+    box-sizing: border-box;
+    border: 5px rgb(0, 234, 255) solid;
+    border-radius: 9px;
+    color: rgb(230, 142, 0);
+    overflow-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  
+  }
+  
+  .flexInput-commnents {
+    /* display: flex;
+    
+    margin-right: 5px;
+    justify-content: center;  
+    flex-direction: row;
+    
+    justify-content: center;
+    display: inline; */
+    display: inline; 
+    margin-right: 31px;
+  }
+
+  #commentSubmitBtn  {
+    width: 10% !important; 
+    font-size: 12px !important;
+    padding: 5px !important;
+    background-color: rgb(155, 240, 255) !important;
+    border: none;
+    border-radius: 7px;
+    color: tomato !important;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  input[type="commentDesc"] {
+    padding: 5px;
+    width: 400px;
+    height: 75px;
+    margin: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 7px;
+    background-color:rgba(255, 254, 253, .8)
   }
   
   
-  .commentPostID {
-    margin-left: 25%;
-    margin-top: -9%;
+
+  .display {
+    display: block !important;
   }
+
   
+.hidden {
+  display: none
+}
+
 
 
 /* LOGIN STYLE */
@@ -337,10 +412,6 @@ button {
     margin: 16px;
     border-radius: 8px;
     font-size: .7em;
-}
-
-.hidden {
-    display: none
 }
 
 
@@ -539,7 +610,7 @@ button {
     }
   
     .active {
-      display: block;
+      display: block !important;
     }
     .postForm {
       width: 300px;

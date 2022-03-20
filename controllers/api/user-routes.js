@@ -14,9 +14,10 @@ router.post("/register", async (req, res) => {
     // Adding these attributes to the users session
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.user_id = cleanUser.id;
       req.session.username = cleanUser.username;
+      res.status(200).json(dbUserData);
     });
+
     // Error for already taken username or email
     if (!cleanUser) {
       return res
@@ -62,6 +63,7 @@ router.post("/login", async (req, res) => {
         .status(200)
         .json({ user: dbUserData, message: "You are now logged in!" });
     });
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -71,29 +73,37 @@ router.post("/login", async (req, res) => {
 // User creates a new Post
 router.post("/post", async (req, res) => {
   const newPost = await Posts.create({
+    user_id: req.body.user_id,
     title: req.body.title,
     description: req.body.description,
+  });
+
+  req.session.save(() => {
+    req.session.loggedIn = true;
+    
+
+    res.status(200)
+     
   });
 
   res.status(200).json(newPost);
 });
 
 
-router.delete("/post/:id", withAuth, async (req, res) => {
-    const newPost = await Takes.destroy({ 
+router.delete("/post/:id", async (req, res) => {
+    const newPost = await Posts.destroy({ 
         where: { id: req.params.id } });
     res.status(200).json(newPost);
   });
   
 
 // User comment post
-router.post("/comment/", withAuth, async (req, res) => {
+router.post("/comment", async (req, res) => {
   try {
     const newComment = await Comments.create({
       description: req.body.description,
-      username: "kilowattdot",
-      post_id: req.body.post_id,
-      // user_id: req.session.id
+      user_id: req.session.id,
+      which: req.session.which
     });
 
     res.status(200).json(newComment);
@@ -103,13 +113,12 @@ router.post("/comment/", withAuth, async (req, res) => {
 });
 
 // User comment delete
-router.delete("/comment/:id", withAuth, async (req, res) => {
+router.delete("/comment/:id", async (req, res) => {
   try {
     const newComment = await Comments.destroy({
-      description: req.body.description,
-      username: "kilowattdot",
-      post_id: req.body.post_id,
-      // user_id: req.session.id
+      where: {
+        id: req.params.id
+      }
     });
 
     res.status(200).json(newComment);
@@ -128,5 +137,8 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+
+
 
 module.exports = router;

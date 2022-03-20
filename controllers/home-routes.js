@@ -68,4 +68,31 @@ router.get('/login', (req, res) => {
 });
   
 
+// router.get('/dashboard', async (req, res) => {
+// 	const dbPostData = await Posts.findAll({
+// 		where: {
+// 			user_id: req.body.user_id
+// 		}
+        
+        
+// 	});
+//     console.log(user_id)
+// 	const userPosts = dbPostData.map((userpost) => userpost.get({ plain: true }));
+
+	
+// 	try {
+//         console.log('User Post:', userPosts)
+// 		res.render('dashboard', {
+// 			userPosts,
+//             user_id: req.body.user_id,
+//             loggedIn: req.session.loggedIn,
+       
+// 		});
+// 	} catch (err) {
+// 		console.log(err);
+// 		res.status(500).json(err);
+// 	}
+// });
+
+
 module.exports = router;

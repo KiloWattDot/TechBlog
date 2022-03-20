@@ -9,8 +9,9 @@
     {{/each}}
 </h2> --}}
 
-<main class="dashboard">
+<main >
 
+{{#if loggedIn}}
   <div class="newPost">
         <div class="newpostHeader">
           <form class="postForm"> 
@@ -25,6 +26,7 @@
             </div>
 
             <div class="flexInput"> 
+              
              <input type="submit" onclick="submitPost()" >
             </div>
         </form>
@@ -33,6 +35,10 @@
       
     </div>
 
+    {{else}}
+
+    <h1>RECENT POST</h1>
+{{/if}}
 
 {{#each (reverse allPost) as |post|}}
   <div class="blogPost">
@@ -44,16 +50,40 @@
        {{post.description}}
       </p>
 
+     
 
-      <div class="commentBox">
 
-        <label class="postId commentPostID" value=" {{post.id}}"></labe> 
+ 
+      <div class="commentBox ">
 
-        <form>
-            <label class="userName">KiloWattDot</label>
-            <input class="commentPost" type="text" placeholder="type comment..">
-            <input type="submit" id="commentSubmit" onclick="submitComment()">
-             {{post.comments}}
+        <input class="postId commentPostID" value=" {{post.id}}"> {{post.id}}</label> 
+        
+          <div class="flexInput-commnents">
+              <label class="userName"></label>
+          </div>
+          
+
+        <input type="image" src="css/message.png" class="commentBtn" onclick="toggleCommentBtn()">
+        
+        <button type="button" class="displayComments">Comments</button>
+
+        <div class="recentComments">
+            {{post.comments}}
+        </div>
+    
+
+        <form class="commentForm hidden ">
+      
+          <div class="flexInput-commnents ">
+            <input class="commentDesc" type="commentDesc" placeholder="type comment..">
+          </div>
+
+          <div class="flexInput-commnents ">
+            <input type="submit" id="commentSubmitBtn" onclick="submitComment()">
+          </div>
+
+          
+            
         </form>
     </div>
   </div>
@@ -64,6 +94,7 @@
 </main>
 
 <script src="js/post-comment.js"></script>
+
 <script>
    const toggleMenu = document.querySelector('#btn-toggle')
     const naviList = document.querySelector('#naviList')
@@ -72,6 +103,9 @@
     toggleMenu.addEventListener('click', () => {
         naviList.classList.toggle('active')
     })
+
+
+    const toggleComment = document.querySelector('#postComment')
 </script>
 
 

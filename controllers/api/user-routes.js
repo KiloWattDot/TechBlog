@@ -6,15 +6,25 @@ const { post } = require("../../models");
 
 //CREATE NEW USER
 router.post("/register", async (req, res) => {
+
+
+  const hashedPassword = await bcrypt.hash(req.body.password, 10);
   try {
     // User is giving information to create account.
     // CleanUser is for making sure user doesn't already exist
-    const dbUserData = await User.create(req.body);
+    const dbUserData = await User.create({
+      usermname: req.body.username,
+      email: req.body.email,
+      password: hashedPassword,
+    })
+
     const cleanUser = dbUserData.get({ plain: true });
     // Adding these attributes to the users session
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.username = cleanUser.username;
+      req.session.username = req.body.username
+      req.session.user_id = cleanUser.user_id
+      
       res.status(200).json(dbUserData);
     });
 
